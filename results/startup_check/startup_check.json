@@ -1,0 +1,9 @@
+{
+  "calibration_sha256_verified": true,
+  "evaluated_tokens": 32768,
+  "model": "meta-llama/Llama-3.2-1B",
+  "nll": 2.203214329984803,
+  "passed": true,
+  "ppl": 9.054069543778843,
+  "scope": "model/data loading, repeated validation baseline and reference restoration; no E1-E6 sweep"
+}

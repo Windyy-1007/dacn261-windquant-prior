@@ -1,0 +1,4 @@
+extends: common.yaml
+experiments:
+  e2:
+    bits: [2, 3, 4]

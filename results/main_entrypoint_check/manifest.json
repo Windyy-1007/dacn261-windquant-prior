@@ -1,0 +1,2227 @@
+{
+  "backend": "affine-rtn-v1",
+  "configuration": {
+    "activation_memory_mb": 256,
+    "data": {
+      "calibration": {
+        "file": "en/c4-train.00000-of-01024.json.gz",
+        "length": 512,
+        "pool_documents": 10000,
+        "repo": "allenai/c4",
+        "revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+        "samples": 128,
+        "split": "train"
+      },
+      "eval_config": "wikitext-2-raw-v1",
+      "eval_repo": "Salesforce/wikitext",
+      "eval_revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+      "test_tokens": null,
+      "validation_tokens": 32768
+    },
+    "device": "cuda:0",
+    "evaluation": {
+      "batch_size": 2,
+      "context": 512,
+      "stride": 256
+    },
+    "experiments": {
+      "e1": {
+        "bits": [
+          8,
+          4,
+          3,
+          2
+        ],
+        "test_bits": [
+          8,
+          4,
+          3,
+          2
+        ]
+      },
+      "e2": {
+        "bits": [
+          2
+        ]
+      },
+      "e3": {
+        "bits": [
+          2
+        ],
+        "chunk_size": 256,
+        "projections": [
+          "q_proj",
+          "gate_proj",
+          "down_proj"
+        ]
+      },
+      "e4": {
+        "bootstrap_samples": 2000
+      },
+      "e5": {
+        "bits": 2,
+        "pairs": 24
+      },
+      "e6": {
+        "bits": [
+          2,
+          3,
+          4
+        ],
+        "budgets": [
+          2.5,
+          3.0,
+          3.5
+        ],
+        "random_seeds": [
+          42,
+          43,
+          44
+        ]
+      }
+    },
+    "group_size": 128,
+    "local_only": true,
+    "model": {
+      "dtype": "bfloat16",
+      "name": "meta-llama/Llama-3.2-1B",
+      "revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+      "tokenizer_revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08"
+    },
+    "output": "results/main_entrypoint_check",
+    "seed": 42
+  },
+  "datasets": {
+    "cache_key": "8667669604139e540ba0575c42115405ad2f7485262e648fedb768de034cd3d4",
+    "calibration": {
+      "file": "en/c4-train.00000-of-01024.json.gz",
+      "length": 512,
+      "pool_documents": 10000,
+      "repo": "allenai/c4",
+      "revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+      "sample_ids": [
+        {
+          "length": 512,
+          "row": 3771,
+          "text_sha256": "6607e83ccaf406d02c58f0e553005ee4dd31bf078526c7383ecf6ea925d76e70",
+          "token_start": 37
+        },
+        {
+          "length": 512,
+          "row": 6672,
+          "text_sha256": "d24b4212a6c801aec7235499de464b7e0e94da88a04cd5f0087261126738da02",
+          "token_start": 63
+        },
+        {
+          "length": 512,
+          "row": 3625,
+          "text_sha256": "15486426926c3923b42db0966993129543b4371f67aba865d740382d5cf243d7",
+          "token_start": 10
+        },
+        {
+          "length": 512,
+          "row": 3093,
+          "text_sha256": "5a37d70d6793545c9eca5f2a3928e12f1d96f32fbb398cdd2e482ba809078c9d",
+          "token_start": 31
+        },
+        {
+          "length": 512,
+          "row": 4178,
+          "text_sha256": "eb3319461c8f64595987d6f857189fc06431ab0053e051a16237fbead41a1bb4",
+          "token_start": 136
+        },
+        {
+          "length": 512,
+          "row": 1287,
+          "text_sha256": "f8d83f894b9bbfe1220782f789cb40d7a03fec85f2f2d8af341b493e8152a777",
+          "token_start": 386
+        },
+        {
+          "length": 512,
+          "row": 2066,
+          "text_sha256": "d36c4689f071c379038c91886f51ae5b7148f2f06ae9af52040f240e586b0372",
+          "token_start": 320
+        },
+        {
+          "length": 512,
+          "row": 3916,
+          "text_sha256": "502be3aebc9474c706e5532e64c2c0b614cb8322a7c6ac641235723b88015ce7",
+          "token_start": 16
+        },
+        {
+          "length": 512,
+          "row": 5943,
+          "text_sha256": "5f5e5c4d95424dfbfcc79ccde136caa4cbb1dd33f348c80d29688e5cb24d2693",
+          "token_start": 130
+        },
+        {
+          "length": 512,
+          "row": 704,
+          "text_sha256": "f9e6da3a5e9f38bad39bcd027a2a641f9a09e17c915fc3c0d643807330874e2b",
+          "token_start": 31
+        },
+        {
+          "length": 512,
+          "row": 4165,
+          "text_sha256": "981a8289c774da9ad0ed6941c24f39806f152c6e0bafdb53c95f2bf4fcc6d231",
+          "token_start": 226
+        },
+        {
+          "length": 512,
+          "row": 7796,
+          "text_sha256": "2e477dd9d8a26a79d222387fee3860a8c1a25c88bfef3eb9bc0186f3e7aa1d7d",
+          "token_start": 3
+        },
+        {
+          "length": 512,
+          "row": 6700,
+          "text_sha256": "343017e4109fe3f506549dbb88d90caabc20ed8a0bec8e8fa95c0a61adc055b1",
+          "token_start": 154
+        },
+        {
+          "length": 512,
+          "row": 4531,
+          "text_sha256": "bd880acd346b136e15af23a0d17bd8b326b7ea31e1e3efab2bd9505acd2c081e",
+          "token_start": 1250
+        },
+        {
+          "length": 512,
+          "row": 2263,
+          "text_sha256": "f15fef3da6e97484915020712ff831971312c4d5af6296a1b20992fd849c6e8d",
+          "token_start": 221
+        },
+        {
+          "length": 512,
+          "row": 1721,
+          "text_sha256": "e8e4932c5bb070961d96e08062328e5ce27c679da03df95e8e136821542b9bef",
+          "token_start": 1077
+        },
+        {
+          "length": 512,
+          "row": 8478,
+          "text_sha256": "8f0a9da76a44902bef3176bfff77d9ee86bc7edeb58dff22ccc652dbd9111efb",
+          "token_start": 104
+        },
+        {
+          "length": 512,
+          "row": 9136,
+          "text_sha256": "b38d856787c97d79123077181cd2914f194a2b1feceb1cc669c03e21416bdaa0",
+          "token_start": 346
+        },
+        {
+          "length": 512,
+          "row": 6028,
+          "text_sha256": "f9cdd77249c635c6a4a2c268ef36a9de7f99c8ec06832997fcdcf74e4bd144ef",
+          "token_start": 57
+        },
+        {
+          "length": 512,
+          "row": 6293,
+          "text_sha256": "0ec0e388157eb5dad034c2d9c9eb218d2a9a49a907fc6f6b71ee434eb4131a6a",
+          "token_start": 143
+        },
+        {
+          "length": 512,
+          "row": 2919,
+          "text_sha256": "2b39ee505f345d9b122835d8ec00e5f7cf66d336b1a6e2d702a6e1041bd387ba",
+          "token_start": 53
+        },
+        {
+          "length": 512,
+          "row": 8487,
+          "text_sha256": "164d331dd4a16302b27a6f4e1e7d3da28d2d1980b4c92623aff5c7ac4b2c3064",
+          "token_start": 301
+        },
+        {
+          "length": 512,
+          "row": 4172,
+          "text_sha256": "e0762ad45080fb2c95d6d736b7fa882f804c12679c0ed2fc205d849744ced759",
+          "token_start": 48
+        },
+        {
+          "length": 512,
+          "row": 2059,
+          "text_sha256": "ba2cb9dd1a49088fd7a542f8985648f444dd57a1fb263efc3ba5fa796202447b",
+          "token_start": 411
+        },
+        {
+          "length": 512,
+          "row": 5069,
+          "text_sha256": "da832b2db12a8808a0b10c6503379fa4d42a003119736ebe91403db43f6d211e",
+          "token_start": 24
+        },
+        {
+          "length": 512,
+          "row": 143,
+          "text_sha256": "39ac28ed260a8a640eecfbedeecedcc1a0f1aabfb9ffbad10f9f757ff4ffa3f2",
+          "token_start": 316
+        },
+        {
+          "length": 512,
+          "row": 5471,
+          "text_sha256": "8788cf485a202f0a830def88e566fe5fa439105da98bdefea7680905480fb448",
+          "token_start": 105
+        },
+        {
+          "length": 512,
+          "row": 3327,
+          "text_sha256": "a1c4b84488ed0231cf88832ad6d5475eae653f877b227cdb70872961d1e6b82f",
+          "token_start": 238
+        },
+        {
+          "length": 512,
+          "row": 9318,
+          "text_sha256": "d65c2898e5b002a44ca38b33a1797653cd37f230451a0ea65851abc673d94129",
+          "token_start": 38
+        },
+        {
+          "length": 512,
+          "row": 7871,
+          "text_sha256": "52d72422fb8fb1bc012ce285dc1785b73515f50af4ee4c44b4cb0ddce2bccfb2",
+          "token_start": 168
+        },
+        {
+          "length": 512,
+          "row": 7294,
+          "text_sha256": "d56e9cc34fa6a288344e22a19655b1e0eacdb8bf854152f5efe8642fb204ece6",
+          "token_start": 319
+        },
+        {
+          "length": 512,
+          "row": 82,
+          "text_sha256": "a6e6ca11cf506fd068d507596f6a244a57ae55947bd0077945ef932132e54b77",
+          "token_start": 2
+        },
+        {
+          "length": 512,
+          "row": 572,
+          "text_sha256": "ee805143541941553ab088b18b6543cc80cd8fb2a19316abe5695c2a26655563",
+          "token_start": 1857
+        },
+        {
+          "length": 512,
+          "row": 7591,
+          "text_sha256": "8ea6a57fd3c3fc9fad2ab5eadf04a6a69ed25eb1eb49dbf286d1b01f35ef1a28",
+          "token_start": 196
+        },
+        {
+          "length": 512,
+          "row": 7783,
+          "text_sha256": "13adec92d82a342f1334060d7a9429640167c3f00c9d965ba18e7a58facf359e",
+          "token_start": 475
+        },
+        {
+          "length": 512,
+          "row": 3206,
+          "text_sha256": "331050f5c0f597a5e6c117e41d396c1133acee423202bece1b36c65bfed92b96",
+          "token_start": 876
+        },
+        {
+          "length": 512,
+          "row": 3452,
+          "text_sha256": "5c3bddc1878e9ce8e0ddceff9fe03dca63250ea30122c7d84af70c7fe7ee4546",
+          "token_start": 79
+        },
+        {
+          "length": 512,
+          "row": 418,
+          "text_sha256": "e5cd07f4ae352bc6683afca5d3018040a97798396d34db68cd6d0500399d0d09",
+          "token_start": 12
+        },
+        {
+          "length": 512,
+          "row": 5123,
+          "text_sha256": "ea2d492395525cfac9f2a205df3cdd982e21e5c659430e5fa817f00f7463ec8c",
+          "token_start": 695
+        },
+        {
+          "length": 512,
+          "row": 5018,
+          "text_sha256": "e4b0a8457206f0f3a03382358a1361b913c0c055455e33b3ecfebc4953b7b54e",
+          "token_start": 6
+        },
+        {
+          "length": 512,
+          "row": 8737,
+          "text_sha256": "7dca31098e25c8727e9683cecba5517b8fdc931b3ef7bd661f3e9066d0218b5f",
+          "token_start": 116
+        },
+        {
+          "length": 512,
+          "row": 8068,
+          "text_sha256": "44fdd54675a0f3658c4cea62e69861ae5517b2a41214ddf0704e5dc696c9fb80",
+          "token_start": 33
+        },
+        {
+          "length": 512,
+          "row": 8228,
+          "text_sha256": "a39ef4d02c7c4d3e48f1f433e9595128fe10bf10238da86943a4b36f69a292c6",
+          "token_start": 672
+        },
+        {
+          "length": 512,
+          "row": 5865,
+          "text_sha256": "93ff01ad6ac7ddef1630039459f41fe7fa0e24969317f3e0e98804325363a2a2",
+          "token_start": 300
+        },
+        {
+          "length": 512,
+          "row": 2401,
+          "text_sha256": "1f95fff7f4bc69afb62c7cc5b277b88f859d5f14a136a481de0a431d27d870f3",
+          "token_start": 24
+        },
+        {
+          "length": 512,
+          "row": 3528,
+          "text_sha256": "b9a53f28a368582288159eeca6c905fc59894fbd01bf71e3728f77184b3355f6",
+          "token_start": 110
+        },
+        {
+          "length": 512,
+          "row": 1430,
+          "text_sha256": "8373c08d9dfa067c6b9d8ca957c3dbdb9877bd5efa776c1d24c025bff505abac",
+          "token_start": 105
+        },
+        {
+          "length": 512,
+          "row": 8245,
+          "text_sha256": "346ead6c54ecc8ca0ca883758caa1c798d35e631712e1d36e787b9c3fb66debb",
+          "token_start": 12
+        },
+        {
+          "length": 512,
+          "row": 955,
+          "text_sha256": "67b5dd60fc6d75f35f13fd0639c94237375dec4e36e27522d60462fe99d176e9",
+          "token_start": 69
+        },
+        {
+          "length": 512,
+          "row": 3399,
+          "text_sha256": "4061c1331275135d356f218f640a8de3cf2b8f938dbfc853e52aadf9d07f5273",
+          "token_start": 1214
+        },
+        {
+          "length": 512,
+          "row": 6090,
+          "text_sha256": "5f2693ba91dddba74fbbb84fc0817c2c735544423fcff3d91bad0d32dd941e3f",
+          "token_start": 198
+        },
+        {
+          "length": 512,
+          "row": 871,
+          "text_sha256": "37ed817746bcab6515a5ade598111fa0fe838acdd4e09c5af8013c921dd50eb6",
+          "token_start": 146
+        },
+        {
+          "length": 512,
+          "row": 1142,
+          "text_sha256": "2d4f1cb30ed9cedc600add74de03788694ee067c4d45cc9dfde0cff944697faa",
+          "token_start": 258
+        },
+        {
+          "length": 512,
+          "row": 7926,
+          "text_sha256": "c4f8923ff644e0299c4f1d235bbcd7d0453bff8537a4c79d567b79ab4cb0f3e5",
+          "token_start": 1305
+        },
+        {
+          "length": 512,
+          "row": 9311,
+          "text_sha256": "79ed454cee5501f8e8c435bb3693bc3dd2a1411bcc5746bb7adeef1c8e1b973e",
+          "token_start": 521
+        },
+        {
+          "length": 512,
+          "row": 2971,
+          "text_sha256": "737a53d92fd259ef059415b1014fa8f4b1ebe0141df800faa2f0d078f24c720d",
+          "token_start": 262
+        },
+        {
+          "length": 512,
+          "row": 4881,
+          "text_sha256": "1fdf53fecf31ea28c5deb8da2030ecc741d7fbaeddb5bf1655b0535bd77767b5",
+          "token_start": 363
+        },
+        {
+          "length": 512,
+          "row": 9108,
+          "text_sha256": "c55f8fc13af2075f1d2fd2fe2a23710129eaf61b46fd1eeca3cfb9b96491cc59",
+          "token_start": 431
+        },
+        {
+          "length": 512,
+          "row": 1284,
+          "text_sha256": "1cc1f006b7211bf29a5a0ac23e82658d1b5b75dd5811b1a267f1acbd0ccfbcf1",
+          "token_start": 985
+        },
+        {
+          "length": 512,
+          "row": 7536,
+          "text_sha256": "3f63414143c004ae293f4ace2ad70bc8a4ddef2b51b0f0bbab1a8651cc7c1791",
+          "token_start": 158
+        },
+        {
+          "length": 512,
+          "row": 3736,
+          "text_sha256": "9a3db0eef121faf65c93cee8c9130864633d45fd079abc8ca6e302637d25ed45",
+          "token_start": 227
+        },
+        {
+          "length": 512,
+          "row": 9877,
+          "text_sha256": "59957f41bb329dc9c9995bf3a40a87043e5e8749ad05ca57a4b689da584f4839",
+          "token_start": 190
+        },
+        {
+          "length": 512,
+          "row": 7124,
+          "text_sha256": "4d06bc130b10267c6c4789225152fc75ede5cb79a07470d516e446d66e40f3d4",
+          "token_start": 497
+        },
+        {
+          "length": 512,
+          "row": 2781,
+          "text_sha256": "832c8ab25a9821288f63768f12230c344022720f63124a237708b52e594247e4",
+          "token_start": 70
+        },
+        {
+          "length": 512,
+          "row": 1672,
+          "text_sha256": "5c4b471120738d61868755aef5a8a6e53c8276e0f895ba7f5c11fea50c051255",
+          "token_start": 2
+        },
+        {
+          "length": 512,
+          "row": 9208,
+          "text_sha256": "a75747bb02fe7b3b30edc1541b06a076b47b3a30df3b786a4bc4c107b76f3196",
+          "token_start": 15
+        },
+        {
+          "length": 512,
+          "row": 6510,
+          "text_sha256": "4c7cd286d9cd29c3ba38807245f85028990d9a6ca28fb80749cc9603d7ae9055",
+          "token_start": 65
+        },
+        {
+          "length": 512,
+          "row": 8799,
+          "text_sha256": "d828bbc79e8dc2661d509977d0824df8051e20efe5d2ab9fbca848f1a3b157b4",
+          "token_start": 39
+        },
+        {
+          "length": 512,
+          "row": 2678,
+          "text_sha256": "0fadbc04b9177deb3ec2dba16152b6e12ec73cde49dd9f3d3da73150a464c09c",
+          "token_start": 74
+        },
+        {
+          "length": 512,
+          "row": 1252,
+          "text_sha256": "c194c87baf597859bbc5805a16dbf7a474bb8a4e3be2d06edffc0bbb2d8c957c",
+          "token_start": 446
+        },
+        {
+          "length": 512,
+          "row": 2602,
+          "text_sha256": "3fae9ae047ef7a1784433dde49360534d511e8a7d1df8ecf99980647da884bb3",
+          "token_start": 131
+        },
+        {
+          "length": 512,
+          "row": 5879,
+          "text_sha256": "66da1b362ea93fa83e5aa48e62585acd502ccda5651e9fd63b8d8c07cca714a7",
+          "token_start": 366
+        },
+        {
+          "length": 512,
+          "row": 4877,
+          "text_sha256": "60373991c35920469582dc188a3dd0b907080b9f9215d57e8dc191093d10dca9",
+          "token_start": 79
+        },
+        {
+          "length": 512,
+          "row": 4122,
+          "text_sha256": "2659c841e63e9587234e2a919c52395616d0c9379d6406cfaa68fa24b59d39f1",
+          "token_start": 298
+        },
+        {
+          "length": 512,
+          "row": 63,
+          "text_sha256": "4c849867b574cda0cdc823a1eb3d4dd48949fac3ea6c9e662073d4b9f848c372",
+          "token_start": 4433
+        },
+        {
+          "length": 512,
+          "row": 6787,
+          "text_sha256": "02bdbd38c82b82eb2f3e0af1bd3551da2b9ca7c7439aea79f79c6236a42c7bba",
+          "token_start": 149
+        },
+        {
+          "length": 512,
+          "row": 3311,
+          "text_sha256": "7d6dc4c44f32adb7e6d20b0a380ad9bc5e0cf61f4567b13ae390b6c311f92dbf",
+          "token_start": 150
+        },
+        {
+          "length": 512,
+          "row": 8746,
+          "text_sha256": "6c13a01e4072f8c5aee34194053da5d451b33625eadbda339aedc9532007efac",
+          "token_start": 15
+        },
+        {
+          "length": 512,
+          "row": 1870,
+          "text_sha256": "490abfbeea3ef7e7ce4bb2df37f1ea9871bc1be2bc99895292e101154dcf20c6",
+          "token_start": 158
+        },
+        {
+          "length": 512,
+          "row": 8315,
+          "text_sha256": "56b34fe76ca4238bfd89ba57ed25e8e6b1b12c3e9a03d9023a387505d06c6b1f",
+          "token_start": 1235
+        },
+        {
+          "length": 512,
+          "row": 766,
+          "text_sha256": "29201a83ddf58244f8a29f10db89d6593df469f0999ffeca0dca714d9296f5f1",
+          "token_start": 351
+        },
+        {
+          "length": 512,
+          "row": 8100,
+          "text_sha256": "3e887293381ff15f93fb1f51dbab6cd3377241f1f0883a0765b323390f3fcace",
+          "token_start": 596
+        },
+        {
+          "length": 512,
+          "row": 1977,
+          "text_sha256": "f07a319965c6eaebc364bfc2c5ee3dfcfd7ff4f92fa0cbebfa87a35b23136d57",
+          "token_start": 94
+        },
+        {
+          "length": 512,
+          "row": 3127,
+          "text_sha256": "6b341c54c1e65b81ae64354921e656eb1335b9fa89a5dee7c7f817567f9539c7",
+          "token_start": 16
+        },
+        {
+          "length": 512,
+          "row": 1175,
+          "text_sha256": "60e9aa28683e393d710f8cc923ebfb0f05cd7d03123393883a309cfd41c55d4d",
+          "token_start": 530
+        },
+        {
+          "length": 512,
+          "row": 4269,
+          "text_sha256": "4bfbee557c00af27d90d1484132ea7b51428e8d43aea7ce7ebdc33986ca78928",
+          "token_start": 148
+        },
+        {
+          "length": 512,
+          "row": 1028,
+          "text_sha256": "fd6da0eec83216c16356b6908f3806b4d0a80f6a658500b81ef8453541e6ca7e",
+          "token_start": 117
+        },
+        {
+          "length": 512,
+          "row": 7959,
+          "text_sha256": "29fcf47c700ef6432184ad2a8079cc44942a84aca7001fd84aec006e540cbcea",
+          "token_start": 121
+        },
+        {
+          "length": 512,
+          "row": 1936,
+          "text_sha256": "a84b0a5a5530b68f9ccc3b786368a4b74588ced3dd05b925a432df1c0dadaad5",
+          "token_start": 32
+        },
+        {
+          "length": 512,
+          "row": 5801,
+          "text_sha256": "d77911f734020f8597f1b4c5bb9b399730c8631d5a9542ddf4d3ca6c58b20704",
+          "token_start": 143
+        },
+        {
+          "length": 512,
+          "row": 4297,
+          "text_sha256": "8476a1deb50b80c24a6f05dc6d7b638d5c1ab081e709611658318d936b0bc354",
+          "token_start": 6
+        },
+        {
+          "length": 512,
+          "row": 8815,
+          "text_sha256": "4a4353dfef797ef545169b124d629550550375313c28903a834d5d2d40a6ed75",
+          "token_start": 216
+        },
+        {
+          "length": 512,
+          "row": 7310,
+          "text_sha256": "d9144307ecceeed734d7c43e81ec1c7e40ce88a03dcf5abb108dcb3f5f1bcb8d",
+          "token_start": 704
+        },
+        {
+          "length": 512,
+          "row": 9558,
+          "text_sha256": "1a1af2fe434257a87454086ceac47da219cae6c86a8151f3dc9c9cc71dbe2db0",
+          "token_start": 400
+        },
+        {
+          "length": 512,
+          "row": 2130,
+          "text_sha256": "0ef7d92f3f297598dd73f4ad89ebd9b733dc96ea82b4f28873e62c95a3dfab0c",
+          "token_start": 499
+        },
+        {
+          "length": 512,
+          "row": 6238,
+          "text_sha256": "21a2d53dcdfaf0b40ce81ebd70aafc3f78672c40a48b3a6eb68032984ca27813",
+          "token_start": 51
+        },
+        {
+          "length": 512,
+          "row": 2756,
+          "text_sha256": "07f824a95c8a0226e808e2a2b1b58bd73f56cd63c57865f14fbf929925248e29",
+          "token_start": 20
+        },
+        {
+          "length": 512,
+          "row": 4044,
+          "text_sha256": "e6c4a50f16ececc95699c55cc3a6a07af112e2d263ef68cf6a4d28eaae0e7df2",
+          "token_start": 1648
+        },
+        {
+          "length": 512,
+          "row": 7686,
+          "text_sha256": "924da001501fb83609a098b4ff2d8bb64d91bd91533513e1b8379e3cd7251f33",
+          "token_start": 8
+        },
+        {
+          "length": 512,
+          "row": 2025,
+          "text_sha256": "fe8993d9abf4a06ae245ab26342ee9c4d466a955cb4bc7e6585113818623aeb2",
+          "token_start": 349
+        },
+        {
+          "length": 512,
+          "row": 3370,
+          "text_sha256": "c391f2498f7b94fdc638959ea0d2eb171d99339581f34abc3fad9880e84e6e7c",
+          "token_start": 96
+        },
+        {
+          "length": 512,
+          "row": 8134,
+          "text_sha256": "350122decfdfbd73c40dd4c9a7a1c0e830777a4bebd8378f7bb291d52b5dee1f",
+          "token_start": 974
+        },
+        {
+          "length": 512,
+          "row": 7286,
+          "text_sha256": "bbba5d52b729d42680eecd46e28bc300111fdd51bee4f3678c78272fb08b59e6",
+          "token_start": 2845
+        },
+        {
+          "length": 512,
+          "row": 1590,
+          "text_sha256": "8e160f3ecf5d36f0e4aab36a64851972f23cfd6e35ace15fabe05bf249b16e97",
+          "token_start": 177
+        },
+        {
+          "length": 512,
+          "row": 5436,
+          "text_sha256": "084a48860e87a60998519ad0fc5f42465a50e164ac7dfd16f4b510c0a41b8f2e",
+          "token_start": 239
+        },
+        {
+          "length": 512,
+          "row": 5867,
+          "text_sha256": "6769bfbf8fcffbee2fe8fe65c3894754e0c9ec8fbc6c10dedd08bb6c4798404b",
+          "token_start": 1228
+        },
+        {
+          "length": 512,
+          "row": 2193,
+          "text_sha256": "b26d59ebe6d12924185c618c4069c047a34632f0d8e1e3001095771f8b7a3c90",
+          "token_start": 169
+        },
+        {
+          "length": 512,
+          "row": 899,
+          "text_sha256": "7a0ec47578dbe5df5f830630221fcdc9227405ebb8d0bf244d08c3ed3d830665",
+          "token_start": 148
+        },
+        {
+          "length": 512,
+          "row": 2517,
+          "text_sha256": "52354c2cfe2aa65febc223470e3d3ee0b223c1524a1b547997a5b2ef2c28718c",
+          "token_start": 144
+        },
+        {
+          "length": 512,
+          "row": 9486,
+          "text_sha256": "cef7116cb3c2d31d7ef8146add692e98159793a22bcfa515f6b9ea47af3b671d",
+          "token_start": 171
+        },
+        {
+          "length": 512,
+          "row": 1309,
+          "text_sha256": "78a1b187522216a313ce0ad5ca0cea881bdbbea2bdcef228c9cfee4bb2329441",
+          "token_start": 153
+        },
+        {
+          "length": 512,
+          "row": 2893,
+          "text_sha256": "b3ebae9ee521e1d78660b35ee0b42df762f505651e8d8564a17af20e5e8a3cc1",
+          "token_start": 107
+        },
+        {
+          "length": 512,
+          "row": 1136,
+          "text_sha256": "d47141a56fd5990860e67f3383808786df8de42fd2b914ac7b4802d0cff19667",
+          "token_start": 168
+        },
+        {
+          "length": 512,
+          "row": 2773,
+          "text_sha256": "7511deeb0597717320ff151e81006f04df62988274ca58e690a9e48b7d19defb",
+          "token_start": 166
+        },
+        {
+          "length": 512,
+          "row": 2005,
+          "text_sha256": "a31fbeed1d093fbf65fb610fe2733c9fb3126db561aea54a730c6ed47671ee66",
+          "token_start": 429
+        },
+        {
+          "length": 512,
+          "row": 9860,
+          "text_sha256": "24154efcda5e8e0b5e30e16b18ce2dc780a9778d6a1e45c3a5f7bcffa50e63da",
+          "token_start": 3721
+        },
+        {
+          "length": 512,
+          "row": 4266,
+          "text_sha256": "05fee744e97da3fd39c116efdadd06b28be7ae4849ca782ea2324a4cd6dbdcfb",
+          "token_start": 21
+        },
+        {
+          "length": 512,
+          "row": 5356,
+          "text_sha256": "6d5b771c1612615a015d480e4dfe3dc23416687311e57af9a435d7fe0f06fb02",
+          "token_start": 31
+        },
+        {
+          "length": 512,
+          "row": 3567,
+          "text_sha256": "836fbc26f1326d243a12c21a99b1f409c55aaa0fcd4b0248d4176eef249c50b7",
+          "token_start": 112
+        },
+        {
+          "length": 512,
+          "row": 7197,
+          "text_sha256": "fa0372c2a4a8a57f3f69b4070a1264db58ad1351d1d1e3eb23c89e88f7b4ce5d",
+          "token_start": 1
+        },
+        {
+          "length": 512,
+          "row": 9775,
+          "text_sha256": "bb8e77fd89ad2577a22ce2049883381103f6576c24a2b9b7253cc77a74d224d9",
+          "token_start": 28
+        },
+        {
+          "length": 512,
+          "row": 3513,
+          "text_sha256": "9fd75b358b0617f050e9509ee35c9f1d3df2969cc0f787958d797dfb15c82acf",
+          "token_start": 235
+        },
+        {
+          "length": 512,
+          "row": 9414,
+          "text_sha256": "bb352abdb2c996e98ffa25e0326ece57caf3c33d7fab0c8ef99ec0e6af82890f",
+          "token_start": 477
+        },
+        {
+          "length": 512,
+          "row": 1639,
+          "text_sha256": "5eb27aaf0b720da28af645869cae24e093f447bec819063735e1308b90692654",
+          "token_start": 159
+        },
+        {
+          "length": 512,
+          "row": 768,
+          "text_sha256": "22a067d8802e73cc723ef92e91d2b5910ac539ef80f8069d7111f75bbbc92e8d",
+          "token_start": 109
+        },
+        {
+          "length": 512,
+          "row": 2789,
+          "text_sha256": "7e1b9b06890712bdc4a597eacdfd85a59dca7fcd16b42e7eefaba60c900533b6",
+          "token_start": 244
+        },
+        {
+          "length": 512,
+          "row": 4903,
+          "text_sha256": "001e730e57e604c3e101b77e9f21d38f2c9fcd05c4f06126c0bc397ddffe75bc",
+          "token_start": 246
+        },
+        {
+          "length": 512,
+          "row": 797,
+          "text_sha256": "69d614a392a8d2bfb0d842c03922dfd4f4f46ff8b5021a6f7cd2eb96e968d967",
+          "token_start": 188
+        }
+      ],
+      "samples": 128,
+      "source_file_sha256": "8ef8d75b0e045dec4aa5123a671b4564466b0707086a7ed1ba8721626dfffbc9",
+      "split": "train",
+      "token_sha256": "7cd11441c4a5b9f443d8470eb052fdebeb6053463395dfac38ee89753e2de94c"
+    },
+    "evaluation": {
+      "test": {
+        "configuration": "wikitext-2-raw-v1",
+        "evaluated_tokens": 288936,
+        "input_tokens": 288937,
+        "nonempty_rows": 2891,
+        "repository": "Salesforce/wikitext",
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "source_file_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+        "split": "test",
+        "token_sha256": "bd43da593b1fcbdb8057d6d8742eda1312fc5e5cc80816ef635b02a84116c415"
+      },
+      "validation": {
+        "configuration": "wikitext-2-raw-v1",
+        "evaluated_tokens": 32768,
+        "input_tokens": 32769,
+        "nonempty_rows": 2461,
+        "repository": "Salesforce/wikitext",
+        "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+        "source_file_sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c",
+        "split": "validation",
+        "token_sha256": "fd560bbf9cb0ee4b312622c6952e74a2c9aa9cab7ea9b130d0e0e97cce5f2080"
+      }
+    },
+    "overlap_check": {
+      "calibration_duplicates_or_eval_overlap_rejected": 0,
+      "calibration_vs_eval_shared_rows": 0,
+      "method": "Whitespace-normalized exact text-row SHA256; not semantic deduplication",
+      "validation_test_shared_rows": 64
+    },
+    "tokenization": "Nonempty WikiText rows joined by two newlines; one leading BOS; fixed prefix; no padding targets"
+  },
+  "model": {
+    "dtype": "bfloat16",
+    "name": "meta-llama/Llama-3.2-1B",
+    "revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+    "tokenizer_revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08"
+  },
+  "model_config": {
+    "_name_or_path": "meta-llama/Llama-3.2-1B",
+    "architectures": [
+      "LlamaForCausalLM"
+    ],
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 128000,
+    "chunk_size_feed_forward": 0,
+    "dtype": "bfloat16",
+    "eos_token_id": 128001,
+    "head_dim": 64,
+    "hidden_act": "silu",
+    "hidden_size": 2048,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1"
+    },
+    "initializer_range": 0.02,
+    "intermediate_size": 8192,
+    "is_encoder_decoder": false,
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1
+    },
+    "max_position_embeddings": 131072,
+    "mlp_bias": false,
+    "model_type": "llama",
+    "num_attention_heads": 32,
+    "num_hidden_layers": 16,
+    "num_key_value_heads": 8,
+    "output_attentions": false,
+    "output_hidden_states": false,
+    "pad_token_id": null,
+    "pretraining_tp": 1,
+    "problem_type": null,
+    "return_dict": true,
+    "rms_norm_eps": 1e-05,
+    "rope_parameters": {
+      "factor": 32.0,
+      "high_freq_factor": 4.0,
+      "low_freq_factor": 1.0,
+      "original_max_position_embeddings": 8192,
+      "rope_theta": 500000.0,
+      "rope_type": "llama3"
+    },
+    "tie_word_embeddings": true,
+    "transformers_version": "5.4.0",
+    "use_cache": true,
+    "vocab_size": 128256
+  },
+  "n_layers": 16,
+  "parameter_count": 1235814400,
+  "protocol_id": "535cf6ba525df88f389f8efa73856f33b3d3a8397e2e93834671d36ac05dda89",
+  "resolved_model_revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+  "software": {
+    "cuda": "12.9",
+    "git_commit": "f762f4eece9a3cbb2a59baa1fd8f1129452436da",
+    "gpus": [
+      "NVIDIA H200 NVL",
+      "NVIDIA H200 NVL",
+      "NVIDIA H200 NVL",
+      "NVIDIA H200 NVL"
+    ],
+    "packages": {
+      "datasets": "4.8.4",
+      "matplotlib": "3.11.2",
+      "numpy": "2.4.3",
+      "pandas": "3.0.1",
+      "pyyaml": "6.0.3",
+      "scipy": "1.18.1",
+      "torch": "2.11.0+cu129",
+      "transformers": "5.4.0"
+    },
+    "platform": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Feb  4 2025, 14:48:35) [GCC 13.3.0]"
+  },
+  "source_digest": "fb00bce9a0f1e71fefb1d5426b7cada778de8811332bbd2a5a237955b7a2753b",
+  "targets": [
+    {
+      "layer": 0,
+      "n_parameters": 4194304,
+      "name": "model.layers.0.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "298863c734022e2ab6c7fe5af9597c73e2496417ccc559eb4aad09f02eb077a6",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 1048576,
+      "name": "model.layers.0.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "c975fd3bdc81dc82e7c9e23259b768487fcca34c25becbf66f3a2ba6d1347036",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 1048576,
+      "name": "model.layers.0.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "dd2052e3cc80bc07c90e2b5034642bf5097eb4579a9adca22d4548afd5a6c36e",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 4194304,
+      "name": "model.layers.0.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "2a55e4845b344b4d150a58ce6d47fcf7ed6850dd45d544ab66323126eea9901f",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 16777216,
+      "name": "model.layers.0.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "cbf5074aded070b31baf2c45d884f4dd5de7416ba2230a124db34672d6c2cf41",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 16777216,
+      "name": "model.layers.0.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "25d02338da9c6425fbca2006096cc7f8ec34f1d3541523f876457a8502e83ccb",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 0,
+      "n_parameters": 16777216,
+      "name": "model.layers.0.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "1cd6744c16d39133caa1a3992e1d25ea7298dbb378270119e64c2bd205104f04",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 4194304,
+      "name": "model.layers.1.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "273d9ebb4a4863ec0340ac0c61e1382df400780e7069882889a8feea791a9a4f",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 1048576,
+      "name": "model.layers.1.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "8673d9d42406b286c6e40fca29653498f69345afcb2c90ee0c7ce39d67657e7c",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 1048576,
+      "name": "model.layers.1.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "c2be9de51f84d22a6ba9b6737a434b64cede0b8c3a5478daa229419081556421",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 4194304,
+      "name": "model.layers.1.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "bc050360258dd654461a6bc6dc9d4b68cdbb58b5aace3bd2a852d69ea3a93740",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 16777216,
+      "name": "model.layers.1.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "e28fa3c30ff3eeb7b32d9708c1a5c4d8a010e980015de82254e3db6c9fdbc293",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 16777216,
+      "name": "model.layers.1.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "bce89bf36b2f03364bcd0d2b420803a91b017d2f2955ba99331a6736ac669921",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 1,
+      "n_parameters": 16777216,
+      "name": "model.layers.1.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "d4d75f002d8553011d6f1dd12502c560bcc630193025047956384087653661a1",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 4194304,
+      "name": "model.layers.2.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "1198e8e7d712f8edc391635d332c92af4d3620f303841f2c7121fcd4844ed34d",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 1048576,
+      "name": "model.layers.2.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "775dff6ae3a6038e148eeddb22308f4296750fa04184bb9376ef46553c506ddb",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 1048576,
+      "name": "model.layers.2.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "7c4ba1ea5817bbdbcf977610180783d4af1164cadafafc73f37e059bdbfc896f",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 4194304,
+      "name": "model.layers.2.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "a6f58bbe295c756088c119d52d118e007a39b36b284003923c51a8b4008aca2e",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 16777216,
+      "name": "model.layers.2.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "8e2d843e622e4fb97ec9f7b3c4f4b55122626de48951afd20adad542b8471795",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 16777216,
+      "name": "model.layers.2.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "ebdb327a4c3d5dc6a71258a8a2bb60b10a19645023b35290d921aa8d7fabeee2",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 2,
+      "n_parameters": 16777216,
+      "name": "model.layers.2.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "e78aefbe38197257fadbf36ece370f91524f8de4326f1405074b901463c600e4",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 4194304,
+      "name": "model.layers.3.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "6b37ae7f6b0eeaab2160633b0bcadd002058d4d9027bb6ded5649aba1aff4489",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 1048576,
+      "name": "model.layers.3.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "58b98824601f683e85c235a10bee0c6b42dadb13fc7f5d16673ab28550777468",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 1048576,
+      "name": "model.layers.3.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "0c7c381de45397cf809ede29ddcb0895861109b1244429da669b124556ddeefe",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 4194304,
+      "name": "model.layers.3.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "d86a257978e098d498b8f0769f792551590794218a799f4b7c971cecbcd2d6b1",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 16777216,
+      "name": "model.layers.3.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "62b14bc6749e4f4e22f2de8febf27dce856490f382396321705a0a7b5659c2fd",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 16777216,
+      "name": "model.layers.3.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "f7c8c974052a6d1568f89c897a840d6cf3373681f62084cbf11da2b548f2cf60",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 3,
+      "n_parameters": 16777216,
+      "name": "model.layers.3.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "1c2d354cf7b555ab82a9dba246ad4f75ae1765fbc23fce5cb49da5a859d7da1b",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 4194304,
+      "name": "model.layers.4.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "7c1db37681b0e134f6ea7c4468795ed6a61c993ab3663b63fc3f106d55b98f6c",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 1048576,
+      "name": "model.layers.4.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "e9a9126142c4a10c47343a7158e4b4994e3822f8a6964f9bc70034ef0784113d",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 1048576,
+      "name": "model.layers.4.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "4b8caf7e0f5821192c034c62b49bb82a31cbff1ea9063de041e7e6f3b75d6309",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 4194304,
+      "name": "model.layers.4.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "5c380f36704335f0be5238d9c262c1c27a2d71b4a36da70b01307a6bc5dab815",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 16777216,
+      "name": "model.layers.4.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "f333b27c70d680d77a7b5fabf7b375217c8ea5a6f3d6d226379da3e6f912afe0",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 16777216,
+      "name": "model.layers.4.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "eac2f89e849f9e7647cd2bf2778f437d422e7766c9ccdbfbc67cd6ca7bf9a72f",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 4,
+      "n_parameters": 16777216,
+      "name": "model.layers.4.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "84be0d92f27c85d01328472276bf85457ea80a51f88753669ebfb048d8c7639c",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 4194304,
+      "name": "model.layers.5.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "6233d448d2706ce59ecd68ea0efdf5484b7817f7dc1a4f1f175fd041b0ee8569",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 1048576,
+      "name": "model.layers.5.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "10f74c03dc99eda00ab25ead0257a1df0361f700d782b6c944227da97fbf77db",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 1048576,
+      "name": "model.layers.5.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "91df6cd8d297a4efad515d09a6dbcefd9299f2b3782f0afeea1f2f6bef091b35",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 4194304,
+      "name": "model.layers.5.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "cbb60f742a8b3e8b11984a5a3b047f8baa2e1196e1a14d76dac4070adec64c6f",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 16777216,
+      "name": "model.layers.5.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "1eac28e22e238811d7adc70aeebe6b4bdc22e86dc8e6fb632c2505d11c0bcafa",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 16777216,
+      "name": "model.layers.5.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "3bfd1b71aee0528c2e4a35fdb695fdae1cc0706e6ce1999cfebfae551fad5479",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 5,
+      "n_parameters": 16777216,
+      "name": "model.layers.5.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "47618140feb0088e4600968da7c10ff581efc32037f1e5132364fb4aacb3ca66",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 4194304,
+      "name": "model.layers.6.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "0a9f977fd5725cc9d8303150a59a1026e3eaaf4cb795c9714fbf6fa69c972051",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 1048576,
+      "name": "model.layers.6.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "e2d75963d1e6bdfc608a986d151c0afbf10347823119f9a7f9d4288432c2dc58",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 1048576,
+      "name": "model.layers.6.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "400ee1d7e9a30d9fd88ca735beb2e90f6fd9a6b012b34b0e0f819cfd5b655ed5",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 4194304,
+      "name": "model.layers.6.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "8de8a2fea5376b5f80967cc4c9b7a875179f830596d3a8eb675075553241fdcd",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 16777216,
+      "name": "model.layers.6.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "697b58becaf8291462b314ed88d1dbaf23b5735946e636645bda872fc21d52ab",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 16777216,
+      "name": "model.layers.6.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "b3c9dd4e529d964f2972959ff39642c8315dd54fbe56da71e7d1bac19c2cf739",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 6,
+      "n_parameters": 16777216,
+      "name": "model.layers.6.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "49d14b7aa8ccce29271a320c10900a1ef27e780b1bdcd74b892734b617bde4ad",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 4194304,
+      "name": "model.layers.7.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "40868710f9c05c3054c87dced5ca4f1daab799b0a1c3300d099b2de390a751bc",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 1048576,
+      "name": "model.layers.7.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "88c2f0f170bde571066ba27f7438137489f2a8c27dfc33b068dcd102dab6bd78",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 1048576,
+      "name": "model.layers.7.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "a3e2df139784a982b0cccc73a5f84fe08c26b50cebc3704d98a82935d0c8d756",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 4194304,
+      "name": "model.layers.7.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "92b438d13061a11e3bab32c1a10a155232f313e691215e9ec3ba84c3af7b8bec",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 16777216,
+      "name": "model.layers.7.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "bb148a5e19fc20c7a8f70573150817c9b96452ff184ab3255a31db4264448826",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 16777216,
+      "name": "model.layers.7.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "9572b7dde06294c3970b415936e0701f8d30e070f14eed8815962b6ca2a7fc71",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 7,
+      "n_parameters": 16777216,
+      "name": "model.layers.7.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "6e28d84ffff233d1bb9eb9d6fd0170fab30808184c0b3b2121b6e9cf9e375aa7",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 4194304,
+      "name": "model.layers.8.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "53a6df03b0544ed0ddf1bd3101cc849d30c0061c5ebfbbf3686bb7f3d84eb3da",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 1048576,
+      "name": "model.layers.8.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "354cc27c39026d8b7a5b7f3824bf36bd6a9ed12c82c8299dc73c951f320be8f3",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 1048576,
+      "name": "model.layers.8.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "07814e5a1b68fbeb0c65f526775811eeac9adf42c6838596d1ea1db48f76e64f",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 4194304,
+      "name": "model.layers.8.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "8e9633c08ea35c130525089e56ce22461971f689b5960dabc5adc33b5377ca0c",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 16777216,
+      "name": "model.layers.8.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "b003492c912ddbd2b068b2041d9c0fadb29437217a55b1c62b5b03d4b7ce90ab",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 16777216,
+      "name": "model.layers.8.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "279a6d9564d75f09aea2333cdcdb82fd4660e82d74bad4b55a73a25525ebf37f",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 8,
+      "n_parameters": 16777216,
+      "name": "model.layers.8.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "296da6846f54232d3d0db8d480c192f9f8f3dcde0fe0802cfaecf1b08a9c5c37",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 4194304,
+      "name": "model.layers.9.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "5c42b125817067c652f1150054f11b51f5ec961680ba0f413c8c0c2b8bd3cfa4",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 1048576,
+      "name": "model.layers.9.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "e307e92dcf7cff4531d23e5ce5bbe9119f4822d1a2b837f61eb7fffd734f7fc6",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 1048576,
+      "name": "model.layers.9.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "b899d72b89ac6b5dd345ee5a211c782f7101737c20d3e2d4d1d90a57e46087cc",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 4194304,
+      "name": "model.layers.9.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "01acb2dc1549b062d54805f4972119741b8240c09b37fb5a8a059a0d7fcef7f1",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 16777216,
+      "name": "model.layers.9.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "b93b0896fb316777a09837d5de3051f1fdfa607744c4cd8f072948b326e1d599",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 16777216,
+      "name": "model.layers.9.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "0439bfde8f18620d31e5a1dba2ab090419f2166ea53fbb4a4c5da6231b97cbee",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 9,
+      "n_parameters": 16777216,
+      "name": "model.layers.9.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "0485f053632a469a6167cac20c708065924f848d74ee959b666cb3e8ab414279",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 4194304,
+      "name": "model.layers.10.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "4416b059442face7cf5263c1a6981b0e3b3b0344ef7807dfb86d45969ca9d064",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 1048576,
+      "name": "model.layers.10.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "ff1919ed8a4c27aa27cd5243ea57f68f416a36113c21b4f5130960559e66b7fa",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 1048576,
+      "name": "model.layers.10.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "d9bf8b3a7e3fc61fd14905f410195ba631cf9d047c792409573078f1b37e5eda",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 4194304,
+      "name": "model.layers.10.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "ee924280f813e85fad3ca32060fe1e7ca40ca9f3d03edcaec89c28a7988ae74c",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 16777216,
+      "name": "model.layers.10.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "58f77d2d69ca1e1c36d8efeb61c3b9731ec8ebb0e2589037d66ce89f6f991c25",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 16777216,
+      "name": "model.layers.10.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "5db5d61266ed4606017e067a8bdd8860a1e5a587456040a09fe310dbd08da8fe",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 10,
+      "n_parameters": 16777216,
+      "name": "model.layers.10.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "b797435839b3bfb0373c3ddce483196044c2acd78c6496d1530030e80ca2e753",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 4194304,
+      "name": "model.layers.11.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "1cd6d01797fd0729355f1f9fd005f9bcd594b0f98fba0bb6c163d1f91be8ae65",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 1048576,
+      "name": "model.layers.11.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "0ac2befdce41b053ab8d2103a47a71949c5f1372ef369c1a1eb4c2057d2a3ab0",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 1048576,
+      "name": "model.layers.11.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "e6b3a1c783df5bc68d3e2b0507be54bfd25c73955c853d011e50149c4c5745e7",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 4194304,
+      "name": "model.layers.11.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "40742e0845063b1ba46931004ad5bb060e057977aa4a599f94be1c29fb87a4e4",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 16777216,
+      "name": "model.layers.11.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "67165e54888a09f09314568184bc22903e5097a4403be09396fb5f1795c15808",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 16777216,
+      "name": "model.layers.11.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "b439daf6a7c62861174ef0908cb4f96545e5826466e7c6408161cb1df75e437f",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 11,
+      "n_parameters": 16777216,
+      "name": "model.layers.11.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "7ee1e6e441e83566fa9ef1787f7e578c70c3e0ea22ec4ce0f176db619beee8e0",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 4194304,
+      "name": "model.layers.12.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "f7487d1d31d6441963085df7cd503694a815762d57dd8d133815ffd4d09fc990",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 1048576,
+      "name": "model.layers.12.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "e63f0856dd86d6d21c865a1aa39bf95404da3a76df885e8cbc9149e1019b4e33",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 1048576,
+      "name": "model.layers.12.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "9f18ab8b598946ef013ffeaf84de4070af11b5556402042caacea9c369ce13f4",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 4194304,
+      "name": "model.layers.12.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "cb52e106e64e464b1290027cb223261e2f92ac0dd801efd74c4f9672bb7567ff",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 16777216,
+      "name": "model.layers.12.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "cbd61ccc0cacb9552982522fb30318ddf9ddf1d026c6f149c4f7c2b3c619abee",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 16777216,
+      "name": "model.layers.12.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "8389d07369c95e96caf663863e41938190502b81ba0f51435d75f008d6f12766",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 12,
+      "n_parameters": 16777216,
+      "name": "model.layers.12.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "9817591ef1cee725e73db80a97e5a241692dc0647bdded8faac25cc41e271da7",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 4194304,
+      "name": "model.layers.13.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "8b02e6b04c0a0bba584d5016c3bbd8d46058d1f7ac9a2d31c7146688d463eceb",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 1048576,
+      "name": "model.layers.13.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "eced4fc4b44b21e1740e97cb97fc3167611bb8e6e8c4b9a5fbb3179425698ea4",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 1048576,
+      "name": "model.layers.13.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "bd69f72071d541a890659d57c5d038a7bd7ec02557b6986af8aa1b5f9df11e24",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 4194304,
+      "name": "model.layers.13.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "796ceb3becbc8142656477a417173df3671bf486e29a99d0567459ce6b54cbd6",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 16777216,
+      "name": "model.layers.13.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "3ae11741fbed4af58087268875142a3011433fd599dc7d5700d9e3ee6a0f39d2",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 16777216,
+      "name": "model.layers.13.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "120c0d2d5b17f9d1d1b91556523ff8ba055a0be90be6e84a76ff2fbb921d236f",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 13,
+      "n_parameters": 16777216,
+      "name": "model.layers.13.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "7f971be5c6cae49b04564565e42ee1ac01987d8698bdc8ae71a59825d1b9d097",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 4194304,
+      "name": "model.layers.14.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "4545888946d4d38efc8e20a559db6833381eeb5f74dda159635a8b7620d1aec6",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 1048576,
+      "name": "model.layers.14.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "5346e885fefc16766b0fd8775c810f2ccdec50d22d3206c6c8d293799223be2e",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 1048576,
+      "name": "model.layers.14.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "7050f94b74c808c1dea03e0d266003dbbb84ae704a4dbbc3b711164be83509fe",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 4194304,
+      "name": "model.layers.14.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "ecf591fd195828470322a23d3f21d64f97e5848200ba0ff06367b80b974a530f",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 16777216,
+      "name": "model.layers.14.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "bcd82664170ec0586a66bcc0392eec4566ebb2c731ff8639a41834f6624e64d3",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 16777216,
+      "name": "model.layers.14.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "e22b3493e8a130c7c526e788b2f6bc9e5cf24075342542b8f4131b4941616eeb",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 14,
+      "n_parameters": 16777216,
+      "name": "model.layers.14.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "57fc281099f2e6e657ee13bf81316415759e0f23c7b8ef148e829c6cb1f21cab",
+      "shape": [
+        2048,
+        8192
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 4194304,
+      "name": "model.layers.15.self_attn.q_proj",
+      "projection": "q_proj",
+      "reference_sha256": "e1c6f16cbdbe6952caae5c87af44a190655411096e7605f14e30c600f8464dc9",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 1048576,
+      "name": "model.layers.15.self_attn.k_proj",
+      "projection": "k_proj",
+      "reference_sha256": "bf4080e449614badb4ab439c82cc7cc5addeed63e171e448fe08441c4151d3b9",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 1048576,
+      "name": "model.layers.15.self_attn.v_proj",
+      "projection": "v_proj",
+      "reference_sha256": "2bcd9130d68f7963347613c08f42b466aa085bbf18f4fd634d42b715ffb06a35",
+      "shape": [
+        512,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 4194304,
+      "name": "model.layers.15.self_attn.o_proj",
+      "projection": "o_proj",
+      "reference_sha256": "64990d8f3fc92dac5da222f66a3ffed0bb4cdc044a3fccf2f9329c056d62e1cd",
+      "shape": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 16777216,
+      "name": "model.layers.15.mlp.gate_proj",
+      "projection": "gate_proj",
+      "reference_sha256": "defce8caa50c341b5b6e38fc01711ae8ba021a88c8c848d02bfd9d8049feb4ec",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 16777216,
+      "name": "model.layers.15.mlp.up_proj",
+      "projection": "up_proj",
+      "reference_sha256": "95f8ebcf12c3e33e7c6391f848cc1efb530a04a26b2e7dd82e6497337d812552",
+      "shape": [
+        8192,
+        2048
+      ]
+    },
+    {
+      "layer": 15,
+      "n_parameters": 16777216,
+      "name": "model.layers.15.mlp.down_proj",
+      "projection": "down_proj",
+      "reference_sha256": "ecebe1e93659623aedb5bd1cd198b818aac9c72011332e3c4ab9249151c9bff0",
+      "shape": [
+        2048,
+        8192
+      ]
+    }
+  ]
+}

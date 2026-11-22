@@ -1,0 +1,9 @@
+{
+  "baseline_nll": 2.203214329984803,
+  "evaluated_tokens": 32768,
+  "exact_weight_restoration": true,
+  "passed": true,
+  "reference_logits_recovered": true,
+  "repeated_nll": 2.203214329984803,
+  "runtime": 4.77787572145462
+}

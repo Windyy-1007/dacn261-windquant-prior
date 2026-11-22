@@ -1,0 +1,7 @@
+extends: common.yaml
+output: results/llama32_3b_reference
+activation_memory_mb: 512
+model:
+  name: meta-llama/Llama-3.2-3B
+  revision: 13afe5124825b4f3751f836b40dafda64c1ed062
+  tokenizer_revision: 13afe5124825b4f3751f836b40dafda64c1ed062

@@ -1,0 +1,8 @@
+.cache/
+__pycache__/
+.pytest_cache/
+!results/
+!results/**
+results/**/activations.pt
+results/**/run.lock
+*.tmp
